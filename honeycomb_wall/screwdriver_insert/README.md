@@ -28,6 +28,7 @@ The following measurements need to be taken for each screwdriver slot:
  - **base_height** - The height of the cutout for the handle base
  - **max_handle_diameter** - The maximum diametee of the screwdriver handle. This is used to compute the spacing between screwdrivers and the length of the support
 
+![Measurements](images/measurements.jpeg)
 
 
 ## License
