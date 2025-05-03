@@ -23,6 +23,10 @@ The model offers the following customizable parameters:
 | **separator_width** | float | The witdh of the wall between key cutouts |
 | **flip_support** | boolean | Controls the orientation of the cutout part to allow to create inserts either for right side or left side walls |
 
+## Dependencies
+
+[BOSL2](https://github.com/BelfrySCAD/BOSL2)
+
 ## Attribution
 
 This model is inspired by [DST's model on printables](https://www.printables.com/model/461822-allen-key-pegs-and-nozzle-needle-for-honeycomb-sto)

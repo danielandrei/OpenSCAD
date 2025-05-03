@@ -30,6 +30,10 @@ The following measurements need to be taken for each screwdriver slot:
 
 ![Measurements](images/measurements.jpeg)
 
+## Dependencies
+
+[BOSL2](https://github.com/BelfrySCAD/BOSL2)
+
 
 ## License
 
