@@ -9,7 +9,7 @@ Parametric customizable support rod for dumbell discs (and other objects)
 
 ## Description
 
-This model was allows generating supports with a variable diameter and height disc base and a center rod that can be either be part of the base or printed in threaded sections that can be combined to increase the center rod height as needed. Initially this was created as a support for dumbell discs but it can be used for other stuff (paper towels, cds ...).
+This model was created because I needed a way to store my corength dumbell discss. It allows generating supports with a variable diameter and height disc base and a center rod that can be either be part of the base or printed in threaded sections that can be combined to increase the center rod height as needed. Initially this was created as a support for dumbell discs but it can be used for other stuff (paper towels, cds ...).
 
 The model offers the following customizable parameters:
 
