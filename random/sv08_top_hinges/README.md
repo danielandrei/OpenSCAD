@@ -34,6 +34,7 @@ The model offers the following customizable parameters:
 | **nut_depth** | float | Depth of the nut insert |
 | **magnet_diam** | float | Magnet diameter |
 | **magnet_height** | float | Magnet height |
+| **cover_wall_width** | float | width of the walls for the cover |
 | **cover_length** | float | length of the cover for the gaps between hinges |
 | **cover_width** | float | width of the cover for the gaps between hinges |
 | **cover_low_section_length** | float | length of the cover section under the glass (for a better closure) |

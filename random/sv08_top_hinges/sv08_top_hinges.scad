@@ -48,6 +48,8 @@ magnet_diam = 4.2;
 magnet_height = 3; // [0:.1:4]
 
 /* [Gap cover parameters] */
+// width of the walls for the cover
+cover_wall_width = 2; // .1
 // length of the cover for the gaps between hinges
 cover_length = 20; // .1
 // width of the cover for the gaps between hinges
@@ -134,7 +136,7 @@ module outer_hinge() {
 
   // bottom support with slots for the glass pane (mirrore along the y axis)
   yflip_copy()
-  color("blue")
+//  color("blue")
   translate([0, support_width, pannel_gap]) {
     // top part
     cuboid([wall_width, support_width, support_length + pannel_gap], anchor = TOP + LEFT);
@@ -144,6 +146,9 @@ module outer_hinge() {
       translate([0, 0, - pannel_gap]) 
       cuboid([glass_width, support_width, support_length], anchor = TOP + RIGHT);
     }
+    // part 
+    translate([-glass_width, 0, 0]) 
+    cuboid([cover_wall_width, support_width, cover_low_section_length], anchor = BOT + RIGHT);
   }
 
 }
@@ -180,13 +185,13 @@ module outer_hinge() {
 
 module gap_cover() {
   // bottom long section
-  cuboid([cover_width, cover_length, wall_width], anchor = TOP + BACK) ;
+  cuboid([cover_width, cover_length, cover_wall_width], anchor = TOP + BACK) ;
   // bottom short section
-  cuboid([cover_width, cover_low_section_length, wall_width], anchor = TOP + FRONT);
+  cuboid([cover_width, cover_low_section_length, cover_wall_width], anchor = TOP + FRONT);
   // top part with glass cutout
   difference() {
     color("red")
-    cuboid([cover_width, cover_length, wall_width + glass_width], anchor = BOT + BACK);
+    cuboid([cover_width, cover_length, cover_wall_width + glass_width], anchor = BOT + BACK);
     translate([0, - pannel_gap, 0]) 
     cuboid([cover_width, cover_length - pannel_gap, glass_width], anchor = BOT + BACK);
   }
