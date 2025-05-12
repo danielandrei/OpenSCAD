@@ -7,7 +7,7 @@ Parametric magnetic hinges for the top panel of SV08
 
 ## Description
 
-Tese hinges were created to be able to open the top of the Sovol SV08 3D printer's original enclosure while printing PLA and other materials that need more cooling. 
+These hinges were created to be able to open the top of the Sovol SV08 3D printer's original enclosure while printing PLA and other materials that need more cooling. 
 The supports fit in the 2 mm gap between the 2 glass pannels. At least 2 hinges should be used.
 The mobile panel opens about 100˚ and can be secured with magnets inserted in cutouts in the support.
 
