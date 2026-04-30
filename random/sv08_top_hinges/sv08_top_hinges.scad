@@ -17,7 +17,7 @@ support_length = 20; // .1
 // width of the support. The interior hinge will be equal to this (- 2 X tolerance ) while the outer hinge will be 3 x width
 support_width = 20; // .1
 // gap between the fix and the mobile panel
-pannel_gap = 1.2; // .1
+panel_gap = 1.2; // .1
 
 
 // Tolerance for various parts
@@ -128,8 +128,12 @@ module outer_hinge() {
       color("red")
       position(BOT + RIGHT)
       rotate([0, 10,0])
-        translate([21.4 - (4 - magnet_diam/2), 0, 21.7 - magnet_height ])
+        translate([21.4 - (4 - magnet_diam/2), 0, 21.7 - (magnet_height + 0.4)]) {
       cyl(h=magnet_height, d=magnet_diam, anchor= BOT + RIGHT, $fn=16);
+//      translate([0,0,0.5])
+      cuboid([magnet_diam, magnet_diam, magnet_height], anchor= BOT , $fn=16);
+      }
+      ;
     };
 
   }
@@ -137,13 +141,13 @@ module outer_hinge() {
   // bottom support with slots for the glass pane (mirrore along the y axis)
   yflip_copy()
 //  color("blue")
-  translate([0, support_width, pannel_gap]) {
+  translate([0, support_width, panel_gap]) {
     // top part
-    cuboid([wall_width, support_width, support_length + pannel_gap], anchor = TOP + LEFT);
+    cuboid([wall_width, support_width, support_length + panel_gap], anchor = TOP + LEFT);
     difference() {
       // bottom part with the glass cutout
-      cuboid([wall_width + glass_width, support_width, support_length + pannel_gap], anchor = TOP + RIGHT);
-      translate([0, 0, - pannel_gap]) 
+      cuboid([wall_width + glass_width, support_width, support_length + panel_gap], anchor = TOP + RIGHT);
+      translate([0, 0, - panel_gap]) 
       cuboid([glass_width, support_width, support_length], anchor = TOP + RIGHT);
     }
     // part 
@@ -168,9 +172,12 @@ module outer_hinge() {
       cuboid([ 4, 8, 8], anchor = BOT + RIGHT);
       color("green") 
       position(BOT + LEFT) 
-      translate([- (4 - magnet_height), 0, (8 - magnet_diam)/2])
-      orient(LEFT)
+//      translate([- (4 - magnet_height), 0, (8 - magnet_diam)/2])
+      translate([- (4 - magnet_height - 0.4), 0, (8 - magnet_diam)/2 - 1])
+      orient(LEFT) {
       cyl(h=magnet_height, d=magnet_diam, anchor= BOT + FRONT, $fn=16);
+      cuboid([magnet_diam, magnet_diam, magnet_height], anchor= BOT);
+      }
     }
   }
 
@@ -178,8 +185,8 @@ module outer_hinge() {
    difference() {
     color("red")
     cuboid([wall_width + glass_width, support_width-tolerance*2, support_length], anchor = TOP + LEFT);
-    translate([0, 0, - pannel_gap]) 
-    cuboid([glass_width, support_width, support_length - pannel_gap], anchor = TOP + LEFT);
+    translate([0, 0, - panel_gap]) 
+    cuboid([glass_width, support_width, support_length - panel_gap], anchor = TOP + LEFT);
   }
 }
 
@@ -192,8 +199,8 @@ module gap_cover() {
   difference() {
     color("red")
     cuboid([cover_width, cover_length, cover_wall_width + glass_width], anchor = BOT + BACK);
-    translate([0, - pannel_gap, 0]) 
-    cuboid([cover_width, cover_length - pannel_gap, glass_width], anchor = BOT + BACK);
+    translate([0, - panel_gap, 0]) 
+    cuboid([cover_width, cover_length - panel_gap, glass_width], anchor = BOT + BACK);
   }
 }
 
